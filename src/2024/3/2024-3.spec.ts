@@ -1,8 +1,8 @@
 import {fetchAoc} from '../../utils/fetch-input';
-import {part1, part2} from './2024-2';
+import {part1, part2} from './2024-3';
 
 const testInput = ``;
-const day = 2;
+const day = 3;
 
 describe('fetch 2024', () => {
   it(`should fetch day ${day} data`, async () => {
