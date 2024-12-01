@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "src/index.ts",
   "scripts": {
-    "build": "tsc",
+    "aoc": "ts-node run.ts",
+    "build": "ts-node src/index.ts",
     "build:watch": "tsc-watch --onSuccess \"yarn test\"",
     "test": "jest",
     "test:watch": "jest --watch"
