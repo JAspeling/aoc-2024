@@ -1,14 +1,14 @@
-import { timeIt } from '../../utils';
+import {fetchAoc, timeIt} from '../../utils';
+
+const day = 1;
 
 export const run = async () => {
-  await timeIt(part1)();
-  await timeIt(part2)();
-}
+  const input = await fetchAoc(2024, day);
 
-const part1 = async () => {
-  console.log('Part 1:');
-}
+  await timeIt(part1)(input);
+  await timeIt(part2)(input);
+};
 
-const part2 = async () => {
-  console.log('Part 2:');
-}
+export const part1 = async (input: string[]) => {};
+
+export const part2 = async (input: string[]) => {};

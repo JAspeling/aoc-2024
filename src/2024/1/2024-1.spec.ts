@@ -1,5 +1,5 @@
 import {fetchAoc} from '../../utils/fetch-input';
-import {calculateDistance, extractArrays, findSmallest, part1, part2} from './2024-1';
+import {calculateDistance, extractArrays, part1, part2} from './2024-1';
 
 jest.mock('./2024-1.ts', () => ({
   ...jest.requireActual('./2024-1.ts'),
@@ -25,11 +25,6 @@ describe('fetch 2024', () => {
 
   it('should find the distance between 2 points', async () => {
     expect(calculateDistance(1, 2)).toBe(1);
-  });
-
-  it('should find the minimum value in a list', () => {
-    const list = [5, 2, 7, 5, 1, 8];
-    expect(findSmallest(list)).toBe(1);
   });
 
   it('should extract the arrays from the input', () => {

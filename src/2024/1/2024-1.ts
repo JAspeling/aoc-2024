@@ -1,3 +1,11 @@
+import { fetchAoc, timeIt } from '../../utils';
+
+export const run = async () => {
+  const input = await fetchAoc(2024, 1);
+
+  await timeIt(part1)(input);
+  await timeIt(part2)(input);
+}
 
 export const part1 = async (input: string[]) => {
   const [leftArr, rightArr] = extractArrays(input);
@@ -15,12 +23,19 @@ export const part1 = async (input: string[]) => {
 export const part2 = async (input: string[]) => {
   const [leftArr, rightArr] = extractArrays(input);
 
-  let total = 0
+  let total = 0;
 
-  leftArr.forEach(item => {
-    const count = rightArr.filter(i => i == item).length;
-    total += (item * count)
-  })
+  // A map containing unique values and their counts
+  const rightCountMap = new Map<number, number>();
+
+  rightArr.forEach((item) => {
+    rightCountMap.set(item, (rightCountMap.get(item) || 0) + 1);
+  });
+
+  leftArr.forEach((item) => {
+    const count = rightCountMap.get(item) || 0;
+    total += item * count;
+  });
 
   return total;
 }
@@ -40,5 +55,3 @@ export const extractArrays = (input: string[]): number[][] => {
 }
 
 export const calculateDistance = (p1: number, p2: number): number => Math.abs(p1 - p2)
-
-export const findSmallest = (list: number[]): number => Math.min(...list);

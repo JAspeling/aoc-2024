@@ -1,5 +1,5 @@
 import {fetchAoc} from '../../utils/fetch-input';
-import {part1, part2} from './2024-1_temp';
+import {part1, part2} from './2024-2';
 
 const testInput = ``;
 const day = 2;
@@ -15,11 +15,12 @@ describe('fetch 2024', () => {
 
 describe('part 1', () => {
   it('should calculate part 1', async () => {
-    const realInput = await fetchAoc(2024, day);
+    const realInput = await fetchAoc(2024, day)
     const result = await part1(realInput);
     // expect(result).toBe(x);
   });
-});
+}); 
+
 
 describe('part 2', () => {
   it('should calculate part 1', async () => {
@@ -27,4 +28,4 @@ describe('part 2', () => {
     const result = await part2(realInput);
     // expect(result).toBe(x);
   });
-});
+}); 

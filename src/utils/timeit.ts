@@ -1,7 +1,7 @@
 export const timeIt = (fn: Function) => {
-  return async () => {
+  return async (...args: any[]) => {
     const time = Date.now();
-    await fn();
-    console.log(`${fn.name} took ${Date.now() - time} ms`);
+    const res = await fn(...args);
+    console.log(`${fn.name} took ${Date.now() - time} ms:`, res);
   };
 };

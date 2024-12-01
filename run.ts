@@ -1,5 +1,7 @@
 import {exec} from 'child_process';
 
+require('./src/test-setup');
+
 const args = process.argv.slice(2); // Get CLI arguments
 const [year, day] = args;
 
@@ -8,7 +10,7 @@ if (!year || !day) {
   process.exit(1);
 }
 
-const filePath = `./src/${year}/${day}/${year}-${day}.ts`;
+const filePath = `./src/${year}/${day}/index.ts`;
 
 exec(`ts-node ${filePath}`, (err, stdout, stderr) => {
   if (err) {
