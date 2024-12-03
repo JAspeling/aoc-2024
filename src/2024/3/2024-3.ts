@@ -1,4 +1,5 @@
 import { fetchAoc, splitOnNewlines, timeIt } from '../../utils';
+import { run as _part2 } from './part.2'
 
 const day = 3;
 
@@ -71,8 +72,7 @@ export const part2 = async (input: string) => {
 
   // 82824215
   // 97529391
-  const instructions = getInstructions(input);
-  return processInstructions(instructions);
+  return _part2(input)
 };
 
 
