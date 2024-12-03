@@ -1,4 +1,4 @@
-import {fetchAoc} from '../../utils/fetch-input';
+import {fetchAoc, splitOnNewlines} from '../../utils/fetch-input';
 import {part1, part2} from './2024-4';
 
 const testInput = ``;
@@ -15,8 +15,9 @@ describe('fetch 2024', () => {
 
 describe('part 1', () => {
   it('should calculate part 1', async () => {
-    const realInput = await fetchAoc(2024, day)
-    const result = await part1(realInput);
+    const realInput = await fetchAoc(2024, day);
+    const inputArr = splitOnNewlines(realInput);
+    const result = await part2(inputArr);
     // expect(result).toBe(x);
   });
 });
@@ -25,7 +26,10 @@ describe('part 1', () => {
 describe('part 2', () => {
   it('should calculate part 1', async () => {
     const realInput = await fetchAoc(2024, day);
-    const result = await part2(realInput);
+    const inputArr = splitOnNewlines(realInput);
+    const result = await part2(inputArr);
     // expect(result).toBe(x);
   });
 });
+
+describe(`2024 day ${day}`, () => {});

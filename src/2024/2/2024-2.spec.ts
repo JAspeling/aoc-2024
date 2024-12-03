@@ -1,4 +1,4 @@
-import { fetchAoc } from "../../utils/fetch-input";
+import { fetchAoc, splitOnNewlines } from "../../utils/fetch-input";
 import {
   between,
   convertToArray,
@@ -89,7 +89,7 @@ describe("general tests", () => {
 
 describe("part 1", () => {
   it("should calculate part 1", async () => {
-    const realInput = await fetchAoc(2024, day);
+    const realInput = splitOnNewlines(await fetchAoc(2024, day));
     const result = await part1(realInput);
     // expect(result).toBe(x);
   });
@@ -97,7 +97,7 @@ describe("part 1", () => {
 
 describe("part 2", () => {
   it("should calculate part 1", async () => {
-    const realInput = await fetchAoc(2024, day);
+    const realInput = splitOnNewlines(await fetchAoc(2024, day));
     const result = await part2(realInput);
     // expect(result).toBe(x);
   });

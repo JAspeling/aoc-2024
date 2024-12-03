@@ -14,12 +14,14 @@ const day = 2;
 
 export const run = async () => {
   const input = await fetchAoc(2024, day);
+  const inputArray = input.split('/\s+/');
 
-  await timeIt(part1)(input);
-  await timeIt(part2)(input);
+  await timeIt(part1)(inputArray);
+  await timeIt(part2)(inputArray);
 };
 
 export const part1 = async (input: string[]) => {
+
   const reports = input.map(convertToArray);
   const safeReports = reports.filter(isSafeReport).length;
 
@@ -73,11 +75,12 @@ export const generateReports = (input: string) => convertInputLine(input);
 
 export function isSafeReport(report: number[]) {
   const validIncreasing = report.every(
-    (level, i) =>
+    (level, i, arr) =>
       i === 0 ||
-      (biggerThan(report[i - 1], level) &&
-        between1And3(report[i - 1], level)),
+      (biggerThan(arr[i - 1], level) &&
+        between1And3(arr[i - 1], level))
   );
+
   const validDecreasing = report.every(
     (level, i) =>
       i === 0 ||

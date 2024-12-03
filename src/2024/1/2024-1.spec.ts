@@ -1,4 +1,4 @@
-import {fetchAoc} from '../../utils/fetch-input';
+import {fetchAoc, splitOnNewlines} from '../../utils/fetch-input';
 import {calculateDistance, extractArrays, part1, part2} from './2024-1';
 
 jest.mock('./2024-1.ts', () => ({
@@ -35,9 +35,9 @@ describe('fetch 2024', () => {
   });
 
   it('should extract the arrays with more than single-digit numbers', () => {
-    const newInput = ["12   32"] 
+    const newInput = ["12   32"]
     const [left, right] = extractArrays(newInput);
-    
+
     expect(left).toEqual([12]);
     expect(right).toEqual([32]);
   })
@@ -46,16 +46,18 @@ describe('fetch 2024', () => {
 describe('part 1', () => {
   it('should calculate part 1', async () => {
     const realInput = await fetchAoc(2024, 1)
-    const result = await part1(realInput);
+    const inputArr = splitOnNewlines( realInput);
+    const result = await part1(inputArr);
     expect(result).toBe(2166959);
   });
-}); 
+});
 
 
 describe('part 2', () => {
   it('should calculate part 1', async () => {
     const realInput = await fetchAoc(2024, 1);
-    const result = await part2(realInput);
+    const inputArr = splitOnNewlines(realInput);
+    const result = await part2(inputArr);
     expect(result).toBe(23741109);
   });
-}); 
+});

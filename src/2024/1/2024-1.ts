@@ -1,10 +1,11 @@
-import { fetchAoc, timeIt } from '../../utils';
+import { fetchAoc, splitOnNewlines, timeIt } from '../../utils';
 
 export const run = async () => {
   const input = await fetchAoc(2024, 1);
+  const inputArr = splitOnNewlines(input);
 
-  await timeIt(part1)(input);
-  await timeIt(part2)(input);
+  await timeIt(part1)(inputArr);
+  await timeIt(part2)(inputArr);
 }
 
 export const part1 = async (input: string[]) => {
@@ -48,7 +49,7 @@ export const extractArrays = (input: string[]): number[][] => {
     const [left, right] = row.split(/\s+/).map(Number);
 
     leftArray.push(left);
-    rightArray.push(right);   
+    rightArray.push(right);
   })
 
   return [leftArray, rightArray]
