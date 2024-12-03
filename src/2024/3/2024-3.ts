@@ -70,6 +70,7 @@ export const part2 = async (input: string) => {
   // 98024896 = 388
 
   // 82824215
+  // 97529391
   const instructions = getInstructions(input);
   return processInstructions(instructions);
 };
