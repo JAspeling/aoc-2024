@@ -17,14 +17,14 @@ describe('part 1', () => {
   it('should calculate part 1', async () => {
     const realInput = await fetchAoc(2024, day);
     const inputArr = splitOnNewlines(realInput);
-    const result = await part2(inputArr);
+    const result = await part1(inputArr);
     // expect(result).toBe(x);
   });
 });
 
 
 describe('part 2', () => {
-  it('should calculate part 1', async () => {
+  it('should calculate part 2', async () => {
     const realInput = await fetchAoc(2024, day);
     const inputArr = splitOnNewlines(realInput);
     const result = await part2(inputArr);
