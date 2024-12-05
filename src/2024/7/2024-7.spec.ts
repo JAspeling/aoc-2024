@@ -1,6 +1,6 @@
 import { day } from '.';
 import { fetchAoc, splitOnNewlines } from '../../utils/fetch-input';
-import { part1, part2 } from './2024-6';
+import { part1, part2 } from './2024-7';
 
 const testInput = ``;
 
